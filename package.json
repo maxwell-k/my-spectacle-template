@@ -1,20 +1,22 @@
 {
-  "name": "spectacle-boilerplate",
-  "version": "1.0.1",
-  "description": "ReactJS Powered Presentation Framework",
+  "name": "my-spectacle-template",
+  "version": "0.0.1",
+  "description": "An template for presentations using spectacle",
   "main": "lib/index.js",
   "scripts": {
-    "clean": "rimraf dist",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.production.js",
+    "clean": "rimraf dist",
+    "deploy": "npm run clean && npm run build && npm run serve",
+    "export": "spectacle-renderer --chromium=/usr/bin/chromium-browser --delay 3000",
     "lint": "eslint --ext .js,.jsx .",
-    "deploy": "npm run clean & npm run build && surge -p .",
-    "export": "spectacle-renderer --delay 3000",
+    "serve": "http-server -a 127.0.0.1 -p 3000 .",
     "start": "cross-env NODE_ENV=development node server.js"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
     "deepmerge": "^2.1.1",
+    "http-server": "^0.11.1",
     "normalize.css": "8.0.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
@@ -71,5 +73,8 @@
     "webpack-dev-middleware": "^3.1.3",
     "webpack-dev-server": "^3.1.5",
     "webpack-hot-middleware": "^2.22.3"
+  },
+  "resolutions": {
+    "spectacle-renderer/puppeteer": "1.12.2"
   }
 }

@@ -1,0 +1,11 @@
+--- a/node_modules/spectacle-renderer/lib/index.js
++++ b/node_modules/spectacle-renderer/lib/index.js
+@@ -50,7 +50,7 @@
+     .then(p => {
+       page = p;
+     })
+-    .then(() => page.goto(url, { waitUntil: "networkidle" }))
++    .then(() => page.goto(url, { waitUntil: "networkidle2" }))
+     .then(() =>
+       page.evaluate(
+         (formattedUrl, wait) => {
