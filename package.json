@@ -1,7 +1,7 @@
 {
-  "name": "spectacle-boilerplate",
-  "version": "1.0.1",
-  "description": "ReactJS Powered Presentation Framework",
+  "name": "my-spectacle-template",
+  "version": "0.0.1",
+  "description": "An template for presentations using spectacle",
   "main": "lib/index.js",
   "scripts": {
     "clean": "rimraf dist",
